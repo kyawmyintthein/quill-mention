@@ -433,8 +433,12 @@ function () {
         render.denotationChar = "";
       }
 
-      var prevMentionCharPos = this.mentionCharPos;
-      this.quill.deleteText(this.mentionCharPos, this.cursorPos - this.mentionCharPos, Quill.sources.USER);
+      var prevMentionCharPos = this.mentionCharPos; // this.quill.deleteText(
+      //   this.mentionCharPos,
+      //   this.cursorPos - this.mentionCharPos,
+      //   Quill.sources.USER
+      // );
+
       this.quill.insertText(prevMentionCharPos, render.value, Quill.sources.USER); // this.quill.insertEmbed(
       //   prevMentionCharPos,
       //   "mention",

@@ -435,7 +435,7 @@ function () {
 
       var prevMentionCharPos = this.mentionCharPos;
       this.quill.deleteText(this.mentionCharPos, this.cursorPos - this.mentionCharPos, Quill.sources.USER);
-      this.quill.insertText(prevMentionCharPos, render); // this.quill.insertEmbed(
+      this.quill.insertText(prevMentionCharPos, render, Quill.sources.USER); // this.quill.insertEmbed(
       //   prevMentionCharPos,
       //   "mention",
       //   render,

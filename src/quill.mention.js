@@ -236,7 +236,7 @@ class Mention {
       Quill.sources.USER
     );
 
-    this.quill.insertText(prevMentionCharPos, render);
+    this.quill.insertText(prevMentionCharPos, render, Quill.sources.USER);
     // this.quill.insertEmbed(
     //   prevMentionCharPos,
     //   "mention",

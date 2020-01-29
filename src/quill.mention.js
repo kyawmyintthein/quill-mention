@@ -235,12 +235,14 @@ class Mention {
       this.cursorPos - this.mentionCharPos,
       Quill.sources.USER
     );
-    this.quill.insertEmbed(
-      prevMentionCharPos,
-      "mention",
-      render,
-      Quill.sources.USER
-    );
+
+    this.quill.insertText(prevMentionCharPos, render);
+    // this.quill.insertEmbed(
+    //   prevMentionCharPos,
+    //   "mention",
+    //   render,
+    //   Quill.sources.USER
+    // );
     if (this.options.spaceAfterInsert) {
       this.quill.insertText(prevMentionCharPos + 1, " ", Quill.sources.USER);
       // setSelection here sets cursor position

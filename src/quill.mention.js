@@ -236,7 +236,8 @@ class Mention {
       Quill.sources.USER
     );
 
-    this.quill.insertText(prevMentionCharPos + render.value.length, render.value, Quill.sources.USER);
+    const newCharPos = prevMentionCharPos + render.value.length 
+    this.quill.insertText(newCharPos, render.value, Quill.sources.USER);
     // this.quill.insertEmbed(
     //   prevMentionCharPos,
     //   "mention",
@@ -244,11 +245,11 @@ class Mention {
     //   Quill.sources.USER
     // );
     if (this.options.spaceAfterInsert) {
-      this.quill.insertText(prevMentionCharPos + 1, " ", Quill.sources.USER);
+      this.quill.insertText(newCharPos + 1, " ", Quill.sources.USER);
       // setSelection here sets cursor position
-      this.quill.setSelection(prevMentionCharPos + 2, Quill.sources.USER);
+      this.quill.setSelection(newCharPos + 2, Quill.sources.USER);
     } else {
-      this.quill.setSelection(prevMentionCharPos + 1, Quill.sources.USER);
+      this.quill.setSelection(newCharPos + 1, Quill.sources.USER);
     }
     this.hideMentionList();
   }
